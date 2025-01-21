@@ -74,10 +74,44 @@ def generate_crime_report_prompt(complainant_name, complainant_email, complainan
 
     Please generate the following fields based on the provided information:
     - Incident Type: Specify the type of incident in one of the following categories:
-        [List of incident types here]
+        added categories list after:
+        1. Assault
+        2. Murder
+        3. Manslaughter
+        4. Kidnapping
+        5. Human Trafficking
+        6. Domestic Violence
+        7. Sexual Assault
+        8. Rape
+        9. Child Abuse
+        10. Stalking
+        11. Burglary
+        12. Theft
+        13. Arson
+        14. Shoplifting
+        15. Motor Vehicle Theft
+        16. Robbery
+        17. Vandalism
+        18. Trespassing
+        19. Possession of Stolen Property
+        20. Fraudulent Transactions
+        21. Identity Theft
+        22. Embezzlement
+        23. Bribery
+        24. Tax Evasion
+        25. Money Laundering
+        26. Corporate Fraud
+        27. Cybercrime (Hacking)
+        28. Drug Possession
+        29. Drug Trafficking
+        30. Public Intoxication
+        31. Prostitution
+        32. Illegal Gambling
+        33. Rioting
+        34. Hate Crimes
     - Detailed Description of the Incident: Provide a detailed description of the event, including what happened.
 
-    Ensure the report contains all necessary details in a clear and professional manner without additional information or unnecessary formatting. Please do not include any personal opinions or subjective statements in the report. The report should be concise and factual, focusing on the relevant information provided. The report should be structured logically and follow a standard format for crime incident reports. please do not add asterisks. extract the location of incident if provided else unknown. please do not add date and time as it will be added by the system.
+    Ensure the report contains all necessary details in a clear and professional manner without additional information or unnecessary formatting. Please do not include any personal opinions or subjective statements in the report. The report should be concise and factual, focusing on the relevant information provided. The report should be structured logically and follow a standard format for crime incident reports. please do not add asterisks. extract the location of incident if provided else unknown. please do not add date and time as it will be added by the system. Give detailed report of about 200 words and also include the article sections that are violated according to pakistan constitution and police rules. Not include may be write as a certain formal personal in police station.
     """
 
 # Function to generate a crime report using the Groq API
