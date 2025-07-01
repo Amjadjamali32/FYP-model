@@ -17,7 +17,7 @@ HUGGING_FACE_TOKEN = os.getenv("HUGGING_FACE_TOKEN")
 GROQ_API_KEY = os.getenv("GROQ_API_KEY")
 
 # Groq API Configuration
-GROQ_MODEL_NAME = "llama-3.1-70b-versatile"  
+GROQ_MODEL_NAME = ""  
 
 @app.route("/test", methods=["GET"])
 def test_route():
@@ -111,7 +111,7 @@ def generate_crime_report_prompt(complainant_name, complainant_email, complainan
         34. Hate Crimes
     - Detailed Description of the Incident: Provide a detailed description of the event, including what happened.
 
-    Ensure the report contains all necessary details in a clear and professional manner without additional information or unnecessary formatting. Please do not include any personal opinions or subjective statements in the report. The report should be concise and factual, focusing on the relevant information provided. The report should be structured logically and follow a standard format for crime incident reports. please do not add asterisks. extract the location of incident if provided else unknown. please do not add date and time as it will be added by the system. Give detailed report of about 200 words and also include the article sections that are violated according to pakistan constitution and police rules. Not include may be write as a certain formal personal in police station.
+    Ensure the report contains all necessary details in a clear and professional manner without additional information or unnecessary formatting. Please do not include any personal opinions or subjective statements in the report. The report should be concise and factual, focusing on the relevant information provided. The report should be structured logically and follow a standard format for crime incident reports. please do not add asterisks. extract the location of incident if provided else unknown. please do not add date and time as it will be added by the system. Give detailed report of about 200 words and also include the article sections that are violated according to pakistan constitution and police rules. Not include may be write as a certain formal personal in police station. Do not include any personal opinions or subjective statements in the report. The report should be concise and factual, focusing on the relevant information provided.
     """
 
 # Function to generate a crime report using the Groq API
@@ -119,7 +119,8 @@ def generate_incident_report_with_groq(prompt):
     llm = ChatGroq(
         temperature=0,
         groq_api_key=GROQ_API_KEY,
-        model_name="llama-3.1-70b-versatile"
+        # model_name="llama-3.1-8b-instant"
+        model_name="llama-3.3-70b-versatile"
     )
 
     response = llm.invoke(prompt)
